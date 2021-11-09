@@ -1,5 +1,16 @@
 const express = require('express');
-const morgan = require('morgan');
+const pino = require('pino');
+const logger = require('pino-http')({
+  // Reuse an existing logger instance
+  logger: pino({
+    transport: {
+      target: 'pino-pretty',
+      options: {
+        colorize: true
+      }
+    }
+  }),
+});
 const helmet = require('helmet');
 const cors = require('cors');
 
@@ -12,14 +23,15 @@ const app = express();
 
 app.set('trust proxy', 1);
 
-app.use(morgan('dev'));
+app.use(logger);
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
+  logger(req);
   res.json({
-    message: '👋🌎🌍🌏'
+    message: '👋🌎🌍🌏',
   });
 });
 

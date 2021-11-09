@@ -2,39 +2,37 @@
 
 A simple proxy api to help hide api-keys and secure a massive request in few steps.
 
----
+For this purpose, we will use a NASA api to get weather data from surface of Mars.
 
 ## Cloning the repo
 
-```
+```bash
 git clone https://github.com/leoyassuda/proxy-api.git
 ```
 
 ## Setup
 
-```
+```bash
 npm install
 ```
 
 ## Lint
 
-```
+```bash
 npm run lint
 ```
 
 ## Test
 
-```
+```bash
 npm run test
 ```
 
 ## Development
 
-```
+```bash
 npm run dev
 ```
-
----
 
 ### API
 
@@ -46,9 +44,7 @@ npm run dev
 >
 > /api/v1/mars-weather = (GET) return a json data from nada with the weather of mars.
 
----
-
-### Includes API Server utilities:
+### Includes API Server utilities
 
 - [morgan](https://www.npmjs.com/package/morgan)
   - HTTP request logger middleware for node.js
@@ -63,7 +59,7 @@ npm run dev
 - [slow-down](https://www.npmjs.com/package/express-slow-down)
   - Slows down responses rather than blocking them outright
 
-### Development utilities:
+### Development utilities
 
 - [nodemon](https://www.npmjs.com/package/nodemon)
   - nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
@@ -73,6 +69,14 @@ npm run dev
   - ☕️ Simple, flexible, fun JavaScript test framework for Node.js & The Browser ☕️
 - [supertest](https://www.npmjs.com/package/supertest)
   - HTTP assertions made easy via superagent.
+
+---
+
+## To get a NASA Api Key
+
+First access [NASA-API](https://api.nasa.gov/#signUp), fill form to register and receive the api-key.
+
+You will receive in your e-mail too.
 
 ---
 
